@@ -45,7 +45,7 @@ export default async function GamePage({ params }: Props) {
             </Link>
 
             <div className='flex flex-col'>
-                <Image src={game?.seo_title} alt={`game-${game?.seo_title}`} width={200} height={200} />
+                <Image src={game?.identifier} alt={`game-${game?.seo_title}`} width={200} height={200} />
 
                 <p>{`Title - ${game?.title}`}</p>
                 <p>{`Provider - ${game?.provider}`}</p>

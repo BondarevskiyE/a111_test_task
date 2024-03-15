@@ -13,8 +13,8 @@ export default async function GamesPage() {
             "px-5 py-2"
         )}>
             {games.map((game) => (
-                <Link href={`/games/${game.provider}/${game.seo_title}`} key={game.identifier} className="w-1/4">
-                    <Image src={game?.seo_title} alt={`game-${game?.seo_title}`} width={200} height={200} />
+                <Link href={`/games/${game.provider}/${game.seo_title}`} key={game.identifier} className="w-1/4 m-2">
+                    <Image src={game?.identifier} alt={`game-${game?.seo_title}`} width={200} height={200} />
                     {game.title}
                 </Link>
             ))}
