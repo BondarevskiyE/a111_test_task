@@ -11,9 +11,6 @@ const config: Config = {
       secondaryGrey: "#2b2c36",
       lightGreen: "#47C2E92E"
     },
-    extend: {
-
-    },
   },
   plugins: [],
 };

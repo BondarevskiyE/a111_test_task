@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation'
+import clsx from 'clsx';
 
 import { getAllGames, getGameById } from "../../actions";
 import Link from 'next/link';
-import clsx from 'clsx';
 
 interface Params {
     providerIdOrCategory: string;
