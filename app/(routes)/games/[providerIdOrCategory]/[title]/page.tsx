@@ -1,5 +1,4 @@
 import Image from 'next/image';
-// import { notFound } from 'next/navigation'
 import clsx from 'clsx';
 
 import { getAllGames, getGameById } from "../../actions";
