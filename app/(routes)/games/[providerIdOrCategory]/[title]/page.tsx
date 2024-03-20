@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { notFound } from 'next/navigation'
+// import { notFound } from 'next/navigation'
 import clsx from 'clsx';
 
 import { getAllGames, getGameById } from "../../actions";
@@ -14,6 +14,8 @@ interface Props {
     params: Params
 }
 
+export const dynamicParams = false
+
 export async function generateStaticParams() {
     const games = await getAllGames();
 
@@ -25,10 +27,6 @@ export async function generateStaticParams() {
 
 export default async function GamePage({ params }: Props) {
     const game = await getGameById({ providerOrCategory: params.providerIdOrCategory, title: params.title });
-
-    if (!game) {
-        notFound();
-    }
 
     return (
         <div className='flex px-5'>
@@ -45,7 +43,7 @@ export default async function GamePage({ params }: Props) {
             </Link>
 
             <div className='flex flex-col'>
-                <Image src={game?.identifier} alt={`game-${game?.seo_title}`} width={200} height={200} />
+                {game?.identifier && <Image src={game?.identifier} alt={`game-${game?.seo_title}`} width={200} height={200} />}
 
                 <p>{`Title - ${game?.title}`}</p>
                 <p>{`Provider - ${game?.provider}`}</p>
